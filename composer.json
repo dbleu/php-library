@@ -1,0 +1,21 @@
+{
+    "name": "dbleu/php-libary",
+    "description": "PHP-Libary for https://discord-botlist.eu/",
+    "type": "libary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tunikakeks",
+            "email": "tunikakeks15089@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+		"php": "^7.2"
+	},
+	"autoload": {
+    "psr-4": {
+      "dbleu\\": ["src/dbleu"]
+    }
+  }
+}
