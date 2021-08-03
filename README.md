@@ -1,6 +1,6 @@
 <h1 align="center">discord-botlist.eu api</h1>
 <br />
-Welcome ðŸ‘‹ <br />
+Welcome 👋‹ <br />
 This package offers you a more user friendly and easier way to interact with the discord-botlist.eu HTTP api. This package is made by KeksDev.
 
 ## Install
