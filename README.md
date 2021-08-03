@@ -43,7 +43,7 @@ var_dump($count);
 
 ---
 
-`.getBotData()` <br />
+`getBotData()` <br />
 | Parameter | Type |
 | --- | --- |
 | _none_ | _none_ |
@@ -52,7 +52,7 @@ var_dump($count);
 
 ---
 
-`.updateGuildCount(serverCount)` <br />
+`udateGuildCount(serverCount)` <br />
 | Parameter | Type |
 | --- | --- |
 | updateGuildCount |`Integer` |
