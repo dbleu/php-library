@@ -1,9 +1,9 @@
 <?php
 namespace dbleu\exceptions;
 
-class InvalidTokenException extends \Exception {
+class CooldownException extends \Exception {
   public function errorMessage() {
-    $errorMsg = "Please provide a valid token.";
+    $errorMsg = "You are Rate-Limited.";
     return $errorMsg;
   }
 }

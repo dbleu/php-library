@@ -3,15 +3,17 @@
     "description": "PHP-Libary for https://discord-botlist.eu/",
     "type": "libary",
     "license": "MIT",
+    "keywords": ["dbleu", "discord bot list", "discord", "botlist", "api"],
     "authors": [
         {
             "name": "tunikakeks",
             "email": "tunikakeks15089@gmail.com"
         }
     ],
-    "minimum-stability":"dev",
     "require": {
-		"php": "^7.0"
+		"php": "^7.0",
+		"curl/curl": "^2.3.2",
+		"ext-curl": "*"
 	},
 	"autoload": {
     "psr-4": {

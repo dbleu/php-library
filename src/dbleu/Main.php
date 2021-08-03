@@ -1,11 +1,7 @@
 <?php
 namespace dbleu;
 
-use dbleu\exceptions\{
-	InvalidTokenException,
-	CooldownException
-};
-
+use dbleu\exceptions\InvalidTokenException;
 use dbleu\api\APIRequest;
 
 class Main {
@@ -13,22 +9,23 @@ class Main {
 	
 	public function __construct(string $token = "") {
 		if($token === "") {
-			throw new InvalidTokenException("Invalid token");
+			throw new InvalidTokenException("Invalid API Token provided.");
 		}
 		$this->token = $token;
 	}
 	
-	private function getToken() {
-		return $this->token;
-	}
-	
 	public function getVotes() {
-		$req = new APIRequest($this->token, "https://api.discord-botlist.eu/v1/votes", "GET");
+		$req = new APIRequest($this->token, Config::URL . Config::API_VERSION . "/votes", "GET");
 		return $req->getAnswer();
 	}
 	
-	public function update(int $serverCount = 0) {
-		$req = new APIRequest($this->token, "https://api.discord-botlist.eu/v1/update", "PATCH", '{"serverCount": ' . $serverCount . '}' );
-		return $req->getAnswer();
+	public function updateGuildCount(int $serverCount = 0) {
+		$req = new APIRequest($this->token, Config::URL . Config::API_VERSION . "/update", "PATCH", '{"serverCount": ' . $serverCount . '}' );
+		return json_decode($req->getAnswer());
+	}
+	
+	public function getBotData() {
+		$req = new APIRequest($this->token, Config::URL . Config::API_VERSION . "/ping", "GET");
+		return json_decode($req->getAnswer());
 	}
 }

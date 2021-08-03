@@ -2,7 +2,10 @@
 
 namespace dbleu\api;
 
-use function is_numeric;
+use dbleu\exceptions\{
+	InvalidTokenException,
+	CooldownException
+};
 
 class APIRequest {
 	private $answer;
@@ -24,6 +27,8 @@ class APIRequest {
 
 		$resp = curl_exec($curl);
 		curl_close($curl);
+		if($resp === '{"message":"Too many requests"}') throw new CooldownException("Too many requests");
+		if($resp === '{"message":"You need to wait atleast 5 minutes after posting the data"}') throw new CooldownException("You are Rate-Limited. Please wait atleast 5 minutes.");
 		$this->answer = $resp;
 	}
 	
