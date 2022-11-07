@@ -52,7 +52,7 @@ var_dump($count);
 
 ---
 
-`udateGuildCount(serverCount)` <br />
+`updateGuildCount(serverCount)` <br />
 | Parameter | Type |
 | --- | --- |
 | updateGuildCount |`Integer` |
